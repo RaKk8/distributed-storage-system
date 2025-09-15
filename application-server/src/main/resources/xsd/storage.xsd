@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://soap.appserver.distribuidos.com/"
+           xmlns:tns="http://soap.appserver.distribuidos.com/" 
+           elementFormDefault="qualified">
+
+    <!-- Authentication Request -->
+    <xs:element name="AuthenticationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Authentication Response -->
+    <xs:element name="AuthenticationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="token" type="xs:string" minOccurs="0"/>
+                <xs:element name="userId" type="xs:string" minOccurs="0"/>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Upload Request -->
+    <xs:element name="FileUploadRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="token" type="xs:string"/>
+                <xs:element name="fileName" type="xs:string"/>
+                <xs:element name="content" type="xs:base64Binary"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Operation Response -->
+    <xs:element name="FileOperationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="fileId" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Download Request -->
+    <xs:element name="FileDownloadRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="token" type="xs:string"/>
+                <xs:element name="fileName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Download Response -->
+    <xs:element name="FileDownloadResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="content" type="xs:base64Binary" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File List Request -->
+    <xs:element name="FileListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="token" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File List Response -->
+    <xs:element name="FileListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="files" type="tns:FileInfoList" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Delete Request -->
+    <xs:element name="FileDeleteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="token" type="xs:string"/>
+                <xs:element name="fileName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Info Type -->
+    <xs:complexType name="FileInfo">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="size" type="xs:long"/>
+            <xs:element name="createdAt" type="xs:string"/>
+            <xs:element name="updatedAt" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- File Info List Type -->
+    <xs:complexType name="FileInfoList">
+        <xs:sequence>
+            <xs:element name="file" type="tns:FileInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
