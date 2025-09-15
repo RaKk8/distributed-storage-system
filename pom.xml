@@ -26,6 +26,9 @@
         <module>shared</module>
         <module>database-server</module>
         <module>application-server</module>
+        <module>storage-node-1</module>
+        <module>storage-node-2</module>
+        <module>storage-node-3</module>
     </modules>
 
     <dependencyManagement>
