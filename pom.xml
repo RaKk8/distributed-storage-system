@@ -29,6 +29,7 @@
         <module>storage-node-1</module>
         <module>storage-node-2</module>
         <module>storage-node-3</module>
+        <module>client-backend</module>
     </modules>
 
     <dependencyManagement>

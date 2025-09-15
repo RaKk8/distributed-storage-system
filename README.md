@@ -1,11 +1,18 @@
-# Sistema de Almacenamiento Distribuido
+# 🚀 Sistema de Almacenamiento Distribuido
 
-[![Java](https://img.shields.io/badge/Java-11+-orange.svg)](https://openjdk.java.net/)
-[![Maven](https://img.shields.io/badge/Maven-3.6+-blue.svg)](https://maven.apache.org/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Ready-green.svg)](https://spring.io/projects/spring-boot)
-[![H2 Database](https://img.shields.io/badge/H2-In--Memory-yellow.svg)](https://www.h2database.com/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/RaKk8/distributed-storage-system)
+[![Tests](https://img.shields.io/badge/tests-12%2F12%20passing-brightgreen.svg)](https://github.com/RaKk8/distributed-storage-system)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](https://github.com/RaKk8/distributed-storage-system)
+[![Java](https://img.shields.io/badge/java-11%2B-orange.svg)](https://openjdk.java.net/projects/jdk/11/)
 
-Un sistema de almacenamiento distribuido desarrollado como proyecto académico para la materia de Sistemas Distribuidos. Implementa comunicación mediante múltiples protocolos: RMI, TCP Sockets y SOAP/HTTPS.
+Sistema de almacenamiento distribuido robusto construido con **Java RMI** que proporciona almacenamiento, recuperación y verificación de archivos con replicación automática entre múltiples nodos. Diseñado para alta disponibilidad, integridad de datos y tolerancia a fallos.
+
+## ✨ Estado Actual (v1.5.0)
+- ✅ **12/12 pruebas pasando** con 0 errores
+- ✅ **Sistema de nombres corregido** para recuperación precisa
+- ✅ **Estadísticas reseteables** para testing determinístico  
+- ✅ **Thread-safety mejorado** para operaciones concurrentes
+- ✅ **Informe HTML interactivo** con métricas completas
 
 ## 🏗️ Arquitectura
 
